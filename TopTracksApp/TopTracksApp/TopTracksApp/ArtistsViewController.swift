@@ -15,6 +15,10 @@ class ArtistsViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.apiController.fetchArtists("3vDpQbGnzRbRVirXlfQagB")
+        
+        self.apiController.fetchAlbums("3vDpQbGnzRbRVirXlfQagB")
+        
 //        self.apiController.fetchArtists("u2")
         
 //        self.apiController.fetchTopTracks("3vDpQbGnzRbRVirXlfQagB")
