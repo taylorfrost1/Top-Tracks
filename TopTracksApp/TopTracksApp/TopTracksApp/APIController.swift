@@ -17,9 +17,9 @@ class APIController: NSObject {
         //1. Put URLString from web
         let urlString = "https://api.spotify.com/v1/artists/\(artistID)/top-tracks?country=US"
         
-    print(urlString)
+    //print(urlString)
    
-    //2. Creat url
+    //2. Create url
     if let url = NSURL(string: urlString){
         //3.Create a Data Taask for pulling the data from the url
         
@@ -85,6 +85,7 @@ class APIController: NSObject {
                 }
                 
                 if let jsonDictionary = self.parseJSON(data){
+//                    print(jsonDictionary)
                     
                     if let artistsDict = jsonDictionary["artists"] as? JSONDictionary{
                         
@@ -116,6 +117,99 @@ class APIController: NSObject {
         
     }
     
+    func fetchAlbums (artistID: String) {
+        
+        let urlString = "https://api.spotify.com/v1/artists/\(artistID)/albums"
+        
+        if let url = NSURL(string: urlString){
+            //3.Create a Data Task for pulling the data from the url
+            
+            let task = session.dataTaskWithURL(url, completionHandler: { (data, response, error) in
+                
+                if error != nil {
+                 
+                }
+                
+                if let jsonDictionary = self.parseJSON(data) {
+                    // print(jsonDictionary)
+                    
+                    if let itemsArray = jsonDictionary["items"] as? JSONArray {
+//                        print(itemsArray)
+                        
+                        for itemsDict in itemsArray {
+                            
+                            let theAlbum = Album(dict:itemsDict)
+                            
+                            print(theAlbum.name)
+                            print(theAlbum.artistID)
+                            
+                            DataStore.sharedInstance.addAlbum(theAlbum)
+                            
+                        }
+                        
+                    } else {
+                        
+                        print("I could not parse albums array")
+                    }
+                    
+                    
+                } else {
+                    print("I could not parse the dictionary")
+                }
+                
+            })
+            task.resume()
+        }
+  
+    }
+    
+    func fetchRelatedArtists (artistID: String) {
+        
+        let urlString = "https://api.spotify.com/v1/artists/\(artistID)/related-artists"
+        
+        if let url = NSURL(string: urlString){
+            //3.Create a Data Task for pulling the data from the url
+            
+            let task = session.dataTaskWithURL(url, completionHandler: { (data, response, error) in
+                
+                if error != nil {
+                    
+                }
+                
+                if let jsonDictionary = self.parseJSON(data) {
+                    //
+                    
+                    if let artistsArray = jsonDictionary["artists"] as? JSONArray {
+                        print(artistsArray)
+                        
+                        for artistsDict in artistsArray {
+                            
+                            let theRArtist = RelatedArtist(dict:artistsDict)
+                            
+                            print(theRArtist.name)
+                            print(theRArtist.artistID)
+                            
+                            DataStore.sharedInstance.addRelatedArtist(theRArtist)
+
+                        }
+                        
+                    } else {
+                        
+                        print("I could not parse related artists array")
+                    }
+                    
+                    
+                } else {
+                    print("I could not parse the dictionary")
+                }
+                
+            })
+            task.resume()
+        }
+
+        
+    }
+
     // This method allows us to send some NSData and get back a JSONDictionary
     
     func parseJSON(data:NSData?) -> JSONDictionary? {
@@ -130,7 +224,7 @@ class APIController: NSObject {
                     
                 theDictionary = jsonDictionary
                     
-                //print (jsonDictionary)
+//                print (jsonDictionary)
                 
                     
                 } else {
@@ -150,7 +244,7 @@ class APIController: NSObject {
         
     }
     
-    //Fetch the Tracks from the Web API
+
 
 
 }

@@ -20,6 +20,8 @@
 		FD08E2931D1850A9007529C2 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD08E2921D1850A9007529C2 /* Track.swift */; };
 		FD08E2961D1858D9007529C2 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD08E2951D1858D9007529C2 /* APIController.swift */; };
 		FD08E2981D18597D007529C2 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD08E2971D18597D007529C2 /* DataStore.swift */; };
+		FD08E29A1D18A76B007529C2 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD08E2991D18A76B007529C2 /* Album.swift */; };
+		FD08E29C1D18A783007529C2 /* RelatedArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD08E29B1D18A783007529C2 /* RelatedArtist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		FD08E2921D1850A9007529C2 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		FD08E2951D1858D9007529C2 /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		FD08E2971D18597D007529C2 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		FD08E2991D18A76B007529C2 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		FD08E29B1D18A783007529C2 /* RelatedArtist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelatedArtist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,8 @@
 				FD08E2971D18597D007529C2 /* DataStore.swift */,
 				FD08E2901D18509A007529C2 /* Artist.swift */,
 				FD08E2921D1850A9007529C2 /* Track.swift */,
+				FD08E2991D18A76B007529C2 /* Album.swift */,
+				FD08E29B1D18A783007529C2 /* RelatedArtist.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -300,9 +306,11 @@
 			files = (
 				FD08E2961D1858D9007529C2 /* APIController.swift in Sources */,
 				FD08E2981D18597D007529C2 /* DataStore.swift in Sources */,
+				FD08E29C1D18A783007529C2 /* RelatedArtist.swift in Sources */,
 				FD08E28B1D184EE3007529C2 /* TracksViewController.swift in Sources */,
 				FD08E25F1D184E57007529C2 /* ArtistsViewController.swift in Sources */,
 				FD08E25D1D184E57007529C2 /* AppDelegate.swift in Sources */,
+				FD08E29A1D18A76B007529C2 /* Album.swift in Sources */,
 				FD08E2911D18509A007529C2 /* Artist.swift in Sources */,
 				FD08E28F1D184FB4007529C2 /* Constants.swift in Sources */,
 				FD08E2931D1850A9007529C2 /* Track.swift in Sources */,

@@ -17,7 +17,7 @@ class ArtistsViewController: UIViewController, UITableViewDelegate, UITableViewD
         
 //        self.apiController.fetchArtists("u2")
         
-        self.apiController.fetchTopTracks("3vDpQbGnzRbRVirXlfQagB")
+//        self.apiController.fetchTopTracks("3vDpQbGnzRbRVirXlfQagB")
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
