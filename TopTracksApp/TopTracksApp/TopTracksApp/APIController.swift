@@ -184,7 +184,7 @@ class APIController: NSObject {
                         
                         for artistsDict in artistsArray {
                             
-                            let theRArtist = RelatedArtist(dict:artistsDict)
+                            let theRArtist = Artist(dict:artistsDict)
                             
                             print(theRArtist.name)
                             print(theRArtist.artistID)
@@ -243,8 +243,5 @@ class APIController: NSObject {
         return theDictionary
         
     }
-    
-
-
 
 }
